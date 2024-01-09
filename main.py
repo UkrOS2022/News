@@ -87,7 +87,7 @@ class News(QWidget):
         # "YOUR CURRENCY" COMBOBOX
         self.your_currency_combobox = QComboBox(self)
         self.your_currency_combobox.setGeometry(160, 225, 55, 25)
-        self.your_currency_combobox.addItems(['USD', 'UAH', 'EUR'])
+        self.your_currency_combobox.addItems(['AED', 'AMD', 'AZN', 'CAD', 'CNY', 'EUR', 'FRF', 'GBP', 'GEL', 'JPY', 'KRW', 'KZT', 'MDL', 'PLN', 'RUB', 'TMT', 'TRY', 'UAH', 'USD'])
 
         # "CURRENCY" LABEL
         self.result_label = QLabel('Result: ', self)
@@ -96,7 +96,7 @@ class News(QWidget):
         # "TRANSLATE CURRENCY" COMBOBOX
         self.translate_currency_combobox = QComboBox(self)
         self.translate_currency_combobox.setGeometry(160, 250, 55, 25)
-        self.translate_currency_combobox.addItems(['USD', 'UAH', 'EUR'])
+        self.translate_currency_combobox.addItems(['AED', 'AMD', 'AZN', 'CAD', 'CNY', 'EUR', 'FRF', 'GBP', 'GEL', 'JPY', 'KRW', 'KZT', 'MDL', 'PLN', 'RUB', 'TMT', 'TRY', 'UAH', 'USD'])
 
         # "TRANSLATE" BUTTON
         self.translate_button = QPushButton('Translate', self)

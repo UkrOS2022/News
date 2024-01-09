@@ -278,9 +278,9 @@ class News(QWidget):
         if response.ok:
             exchange_rate = response.json()[translate_currency]
             result = amount * exchange_rate
-            self.result_label.setText(f'Результат: {round(result, 2)} {translate_currency}')
+            self.result_label.setText(f'Result: {round(result, 2)} {translate_currency}')
         else:
-            self.result_label.setText('Результат: 0')
+            self.result_label.setText('Result: 0')
     
 
     # "ABOUT" FUNCTION

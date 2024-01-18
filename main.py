@@ -221,7 +221,13 @@ class News(QWidget):
 
     def load_saved_list(self):
         try:
-            with open('file.txt', 'r') as f:
+            # Get the home directory of the current user
+            home_directory = os.path.expanduser("~")
+            
+            # Construct the full file path
+            file_path = os.path.join(home_directory, '.programdates', 'weather.txt')
+
+            with open(file_path, 'r') as f:
                 self.saved_list = [line.strip() for line in f.readlines()]
                 self.saved_listbox.addItems(self.saved_list)
         except FileNotFoundError:
@@ -231,7 +237,13 @@ class News(QWidget):
     # CLOSING OF PROGRAMM
     
     def closeEvent(self, event):
-        with open('file.txt', 'w') as f:
+        # Get the home directory of the current user
+        home_directory = os.path.expanduser("~")
+            
+        # Construct the full file path
+        file_path = os.path.join(home_directory, '.programdates', 'weather.txt')
+
+        with open(file_path, 'w') as f:
             for item in self.saved_list:
                 f.write(f'{item}\n')
         event.accept()

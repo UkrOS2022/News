@@ -40,6 +40,7 @@ class News(QWidget):
         """
 
         self.saved_list = []
+        self.load_saved_list()
 
         # MAIN
         self.setWindowTitle(self.tr("News"))
@@ -66,6 +67,7 @@ class News(QWidget):
         self.saved_listbox = QListWidget(self)
         self.saved_listbox.setGeometry(5, 100, 210, 50)
         self.saved_listbox.itemClicked.connect(self.item_clicked)
+        self.saved_listbox.addItems(self.saved_list)
 
         # "ADD" BUTTON
         self.add_button = QPushButton('Add', self)
@@ -141,7 +143,6 @@ class News(QWidget):
         self.go_to_button.setGeometry(250, 300, 210, 35)
         self.go_to_button.hide()
 
-        self.load_saved_list()
         self.load_news()
         self.resizeEvent = self.on_resize
 
@@ -230,7 +231,6 @@ class News(QWidget):
 
             with open(file_path, 'r') as f:
                 self.saved_list = [line.strip() for line in f.readlines()]
-                self.saved_listbox.addItems(self.saved_list)
         except FileNotFoundError:
             pass
 
